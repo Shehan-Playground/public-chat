@@ -19,6 +19,8 @@ public class LoginViewController {
     public Button btnLogin;
     public AnchorPane root;
 
+    public boolean isValid;
+
     public void txtUserNameOnAction(ActionEvent actionEvent) throws IOException {
         Socket socket = new Socket("192.168.8.1.100", 5050);
         System.out.println("Connected to server");
@@ -29,9 +31,21 @@ public class LoginViewController {
     }
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+        if(isValid){
+            Stage stage = (Stage) root.getScene().getWindow();
+            AnchorPane mainRoot = FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
+            Scene loginScene = new Scene(mainRoot);
+            stage.setScene(loginScene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+            stage.setTitle("Public Chat");
+            stage.show();
+        }
+    }
+
+    private boolean isValid() throws IOException {
         ServerSocket serverSocket = new ServerSocket(5060);
         System.out.println("Server is up and running at 5060");
-
         while (true){
             System.out.println("Waiting for an incoming connection");
             Socket localSocket = serverSocket.accept();
@@ -44,14 +58,7 @@ public class LoginViewController {
                     while ((read = is.read(buffer)) != -1){
                         System.out.println(new String(buffer, 0, read).equals("OK"));
                         if(new String(buffer, 0, read).equals("OK")){
-                            Stage stage = new Stage();
-                            AnchorPane mainRoot = FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
-                            Scene loginScene = new Scene(mainRoot);
-                            stage.setScene(loginScene);
-                            stage.centerOnScreen();
-                            stage.setResizable(false);
-                            stage.setTitle("Public Chat");
-                            stage.show();
+                            isValid = true;
                         }
                     }
                 }catch (IOException e){
