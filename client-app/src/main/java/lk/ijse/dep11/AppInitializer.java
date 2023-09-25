@@ -12,11 +12,12 @@ public class AppInitializer extends Application {
     }
 
     public void start(Stage primaryStage) throws Exception {
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/LoginView.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
+        primaryStage.setTitle("Public Chat");
         primaryStage.show();
     }
 }

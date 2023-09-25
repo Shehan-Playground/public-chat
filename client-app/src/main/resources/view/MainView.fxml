@@ -34,7 +34,7 @@
       <Button fx:id="btnLogOut" layoutX="428.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: red;" text="Log Out" />
       <ImageView fitHeight="99.0" fitWidth="153.0" layoutX="20.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../assets/Screenshot_from_2023-09-25_18-53-27-removebg-preview.png" />
+            <Image url="@../img/logo.png" />
          </image>
       </ImageView>
       <Label layoutX="169.0" layoutY="33.0" text="Join our community and start chatting...">
