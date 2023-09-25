@@ -2,20 +2,18 @@ package lk.ijse.dep11;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 
 import java.io.*;
 import java.net.Socket;
 
-
-public class MainSceneController {
-    public AnchorPane root;
-    public ListView<String> lvMessage;
-    public ListView<String> lvMemberList;
+public class MainViewController {
+    public TableView tblMessages;
+    public Button btnSend;
+    public TableView tblMemebers;
+    public Button btnLogOut;
     public TextField txtMessage;
-    public Button btnSave;
 
     private ObjectOutputStream oos;
     private ObjectInputStream ois;
@@ -39,7 +37,12 @@ public class MainSceneController {
         }
     }
 
-    public void btnSaveOnAction(ActionEvent actionEvent) {
-        
+    public void btnSendOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnLogOutOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtMessageOnAction(ActionEvent actionEvent) {
     }
 }

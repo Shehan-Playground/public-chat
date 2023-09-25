@@ -6,8 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
+import java.io.IOException;
 public class AppInitializer extends Application {
 
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        AnchorPane root= FXMLLoader.load(getClass().getResource("/view/MainScene.fxml"));
+        AnchorPane root= FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
         Scene mainScene=new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Client-app");
@@ -25,3 +25,4 @@ public class AppInitializer extends Application {
 
     }
 }
+
