@@ -6,11 +6,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
+
 
 public class MainSceneController {
     public AnchorPane root;
@@ -20,6 +18,7 @@ public class MainSceneController {
     public Button btnSave;
 
     private ObjectOutputStream oos;
+    private ObjectInputStream ois;
 
     public void initialize(){
         try {
@@ -29,11 +28,18 @@ public class MainSceneController {
             oos=new ObjectOutputStream(bos);
             System.out.println("Connected");
 
+            Socket socket=new Socket(" ",5060);
+            InputStream is=socket.getInputStream();
+            BufferedInputStream bis=new BufferedInputStream(is);
+            ois=new ObjectInputStream(bis);
+
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        
     }
 }
