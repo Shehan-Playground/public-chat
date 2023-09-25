@@ -13,8 +13,8 @@ public class AppInitializer extends Application {
 
     public void start(Stage primaryStage) throws Exception {
         AnchorPane root = FXMLLoader.load(getClass().getResource("/view/LoginView.fxml"));
-        Scene mainScene = new Scene(root);
-        primaryStage.setScene(mainScene);
+        Scene loginScene = new Scene(root);
+        primaryStage.setScene(loginScene);
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
         primaryStage.setTitle("Public Chat");
