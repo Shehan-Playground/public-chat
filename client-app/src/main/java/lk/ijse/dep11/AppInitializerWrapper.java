@@ -1,7 +1,7 @@
 package lk.ijse.dep11;
 
-public class Main {
+public class AppInitializerWrapper {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        AppInitializer.main(args);
     }
 }
