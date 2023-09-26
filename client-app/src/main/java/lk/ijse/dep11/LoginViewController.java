@@ -59,6 +59,8 @@ public class LoginViewController {
                         System.out.println(new String(buffer, 0, read).equals("OK"));
                         if(new String(buffer, 0, read).equals("OK")){
                             isValid = true;
+                        }else {
+                            isValid = false;
                         }
                     }
                 }catch (IOException e){
